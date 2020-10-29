@@ -2,38 +2,39 @@
 #include <stdlib.h>
 
 
-int main()
+int main(void)
 {
-	double b ;
-	double c ;
-	double a ;
-	double d ;
-	printf("Enter your weight(kg):\n");
-	scanf_s("%lf", &b);
-	printf("Enter your height(m):\n");
-	scanf_s("%lf", &c);
-	d = c * c ;
-	a = b / d ;
-	if (a < 18.5)
+	int b;
+	int c;
+	int a;
+	int d;
+	int e;
+	int f;
+
+	printf("Enter account number (-1 to end ):\n");
+	scanf_s("%d", &a);
+	printf("Enter beginning balance:\n");
+	scanf_s("%d", &b);
+	printf("Enter total charge:\n");
+	scanf_s("%d", &c);
+	printf("Enter total credits:\n");
+	scanf_s("%d", &d);
+	printf("Enter credit limit:\n");
+	scanf_s("%d", &e);
+
+	f = b + c - d;
+
+	if (f > e)
 	{
-		printf("%lf\n", a);
-		printf("Underweight\n");
+		printf("Account:\t");
+		printf("%d\n", a);
+		printf("Credit limit:\t");
+		printf("%d\n", e);
+		printf("Balance:\t");
+		printf("%d\n", f);
+		printf("Credit Limit Exceeded");
+
 	}
-	if (a >= 18.5 && a <= 24.9)
-	{
-		printf("%lf\n", a);
-		printf("Normal\n");
-	}
-	if (a >= 25 && a <= 29.9)
-	{
-		printf("%lf\n", a);
-		printf("Overweight\n");
-	}
-	if (a >= 30)
-	{
-		printf("%lf\n", a);
-		printf("Obese\n");
-	}
-	system("pause");
+	
 	return 0;
 }
